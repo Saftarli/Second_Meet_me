@@ -12,6 +12,8 @@ def index(request):
     home_banner_description = GeneralSetting.objects.get(name='home_banner_description').parameter
     about_myself_welcome = GeneralSetting.objects.get(name='about_myself_welcome').parameter
     about_myself_footer = GeneralSetting.objects.get(name='about_myself_footer').parameter
+    # image
+    header_logo = ImageSetting.objects.get(name='header_logo').file
 
     context = {'site_title': site_title,
                'site_keywords': site_keywords,
@@ -21,6 +23,7 @@ def index(request):
                'home_banner_description': home_banner_description,
                'about_myself_welcome': about_myself_welcome,
                'about_myself_footer': about_myself_footer,
+               'header_logo': header_logo,
 
                }
     return render(request, 'index.html', context=context)
