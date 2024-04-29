@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from core.models import GeneralSetting
+from core.models import GeneralSetting, ImageSetting
 
 
 # Create your views here.
@@ -21,5 +21,6 @@ def index(request):
                'home_banner_description': home_banner_description,
                'about_myself_welcome': about_myself_welcome,
                'about_myself_footer': about_myself_footer,
+
                }
     return render(request, 'index.html', context=context)

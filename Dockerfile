@@ -11,6 +11,8 @@ RUN pip3 install --upgrade pip
 
 RUN pip3 install virtualenv && python3 -m virtualenv $VIRTUAL_ENV
 
+RUN pip install Pillow
+
 ENV PAtH='$VIRTUAL_ENV/bin:$PAtH'
 
 ADD ./requirements.txt /tmp/requirements.txt
