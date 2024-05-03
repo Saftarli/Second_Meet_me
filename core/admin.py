@@ -7,7 +7,7 @@ from core.models import *
 class GeneralSettingAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'description', 'parameter', 'created_date', 'updated_date']
     search_fields = ['name' 'description', 'parameter', 'created_date', 'updated_date']
-    list_editable = ['description', 'parameter',]
+    list_editable = ['description', 'parameter', ]
 
     class Meta:
         model = GeneralSetting
@@ -16,11 +16,18 @@ class GeneralSettingAdmin(admin.ModelAdmin):
 @admin.register(ImageSetting)
 class ImageSettingAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'description', 'file', 'created_date', 'updated_date']
-    search_fields = ['name' 'description', 'file',]
+    search_fields = ['name' 'description', 'file', ]
     list_editable = ['description', 'file']
 
     class Meta:
         model = ImageSetting
 
 
+@admin.register(Skill)
+class Skill(admin.ModelAdmin):
+    list_display = ['id', 'order', 'name', 'percentage', 'created_date', 'updated_date']
+    search_fields = ['name']
+    list_editable = ['order', 'name', 'percentage', ]
 
+    class Meta:
+        model = Skill
