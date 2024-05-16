@@ -31,10 +31,10 @@
                                             class="lnr lnr-home"></i> Baki,Narimanov</a></li>
                                 </ul>
                                 <ul class="list personal_social">
-                                    <li><a target="_blank" href="https://www.facebook.com/totush277/"><i
-                                            class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    {% for social in social_medias %}
+                                        <li><a href="{{ social.link }}" target="_blank">"{{ social_icon }}"</a></li>
+                                    {% endfor %}
+
                                 </ul>
                             </div>
                         </div>
